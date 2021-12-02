@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CalculatorModule } from './calculator/calculator.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { TasksModule } from './task-manager/tasks.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { CalculatorModule } from './calculator/calculator.module';
+import { NoughtsAndCrossesModule } from './noughts-and-crosses/noughts-and-crosses.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TasksModule } from './task-manager/tasks.module';
     DashboardModule,
     CalculatorModule,
     TasksModule,
+    NoughtsAndCrossesModule,
     AppRoutingModule
   ],
   providers: [],

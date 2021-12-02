@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { TaskRoutes } from './task-manager/task-routing.module';
 import { DashboardRoutes } from './dashboard/dashboard-routing.module';
 import { CalculatorRoutes } from './calculator/calculator-routing.module';
-import { TaskRoutes } from './task-manager/task-routing.module';
+import { NoughtsAndCrossesRoutes } from './noughts-and-crosses/noughts-and-crosses-routing.module'
 
 const routes: Routes = [
   {
@@ -13,7 +14,9 @@ const routes: Routes = [
   },
   ...DashboardRoutes,
   ...CalculatorRoutes,
-  ...TaskRoutes
+  ...TaskRoutes,
+  ...NoughtsAndCrossesRoutes
+
   
 ];
 

@@ -1,0 +1,89 @@
+<div>
+    <h2>Noughts And Crosses</h2>
+    
+    <!-- home screen -->
+    <div class="principal" *ngIf="showStart">
+      <a href="#" 
+         class="botao"
+         (click)="startNewGame($event)">
+         Start
+      </a>
+    </div>
+  
+    <!-- board screen -->
+    <div *ngIf="showBoard">
+      <ul>
+        <li class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(0, 0),
+          'kz-img-o': showO(0, 0),
+          'kz-win-color': showVictory(0, 0) }"
+        (click)="playGame(0, 0)"></li>
+        <li class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(0, 1),
+          'kz-img-o': showO(0, 1),
+          'kz-win-color': showVictory(0, 1) }"
+        (click)="playGame(0, 1)"></li>
+        <li class="kz-border-bottom"
+        [ngClass]="{
+          'kz-img-x': showX(0, 2),
+          'kz-img-o': showO(0, 2),
+          'kz-win-color': showVictory(0, 2) }"
+        (click)="playGame(0, 2)"></li>
+        <li class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(1, 0),
+          'kz-img-o': showO(1, 0),
+          'kz-win-color': showVictory(1, 0) }"
+        (click)="playGame(1, 0)"></li>
+        <li class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(1, 1),
+          'kz-img-o': showO(1, 1),
+          'kz-win-color': showVictory(1, 1) }"
+        (click)="playGame(1, 1)"></li>
+        <li class="kz-border-bottom"
+        [ngClass]="{
+          'kz-img-x': showX(1, 2),
+          'kz-img-o': showO(1, 2),
+          'kz-win-color': showVictory(1, 2) }"
+        (click)="playGame(1, 2)"></li>
+        <li class="kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(2, 0),
+          'kz-img-o': showO(2, 0),
+          'kz-win-color': showVictory(2, 0) }"
+        (click)="playGame(2, 0)"></li>
+        <li class="kz-border-right"
+        [ngClass]="{
+          'kz-img-x': showX(2, 1),
+          'kz-img-o': showO(2, 1),
+          'kz-win-color': showVictory(2, 1) }"
+        (click)="playGame(2, 1)"></li>
+        <li
+        [ngClass]="{
+          'kz-img-x': showX(2, 2),
+          'kz-img-o': showO(2, 2),
+          'kz-win-color': showVictory(2, 2) }"
+        (click)="playGame(2, 2)"></li>
+      </ul>
+    </div>
+  
+    <!-- end screen -->
+    <div *ngIf="showEnd">
+      <span>
+      <p *ngIf="player==2">You Win!</p>
+      <p *ngIf="player==1">You Lose!</p>
+      <p *ngIf="player==0">Draw Game</p>
+      <br />
+      <a href="#" 
+           class="botao"
+           (click)="resetGame($event)">
+           Play again?
+        </a>
+      </span>
+    </div>
+  
+  </div>
+  
