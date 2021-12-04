@@ -8,6 +8,7 @@ import { TasksModule } from './task-manager/tasks.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CalculatorModule } from './calculator/calculator.module';
 import { NoughtsAndCrossesModule } from './noughts-and-crosses/noughts-and-crosses.module';
+import { ConverterModule } from './converter/converter.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NoughtsAndCrossesModule } from './noughts-and-crosses/noughts-and-cross
     CalculatorModule,
     TasksModule,
     NoughtsAndCrossesModule,
+    ConverterModule,
     AppRoutingModule
   ],
   providers: [],

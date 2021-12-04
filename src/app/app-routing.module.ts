@@ -5,6 +5,7 @@ import { TaskRoutes } from './task-manager/task-routing.module';
 import { DashboardRoutes } from './dashboard/dashboard-routing.module';
 import { CalculatorRoutes } from './calculator/calculator-routing.module';
 import { NoughtsAndCrossesRoutes } from './noughts-and-crosses/noughts-and-crosses-routing.module'
+import { ConverterRoutes } from './converter/converter-routing.module'
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
   ...DashboardRoutes,
   ...CalculatorRoutes,
   ...TaskRoutes,
-  ...NoughtsAndCrossesRoutes
+  ...NoughtsAndCrossesRoutes,
+  ...ConverterRoutes
 
   
 ];
