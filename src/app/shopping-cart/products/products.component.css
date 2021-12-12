@@ -1,0 +1,50 @@
+.card-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+    border: 1px solid (0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+}
+
+.item {
+    text-align: center;
+    font-size: 30px;
+    color:  rgba(0,0,0,.9);
+    padding: 10px;
+}
+
+.item a:hover {
+    cursor: pointer;
+}
+
+.item-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
+}
+
+.card {
+    padding: 20px;
+    margin: 50px;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3 ease-in-out;
+}
+
+.card img:hover {
+    transition: 0.3 ease-in-out;
+    transform: scale(1.1);
+}
+
+h6 {
+    font-size: 9px;
+}

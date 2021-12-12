@@ -1,64 +1,53 @@
-<br />
-<div class="alert alert-danger" 
-	role="alert"
-	*ngIf="hasError">
-	Error returning data. Please, try again.
+<div class="">
+	<div class="alert alert-danger" role="alert" *ngIf="hasError">
+		Error returning data. Please, try again.
+	</div>
+
+	<section class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">
+					<div class="card">
+						<div class="panel-body text-center">
+							<h3 class="text-center">
+								Inform a value
+							</h3>
+							<form #conversionForm="ngForm" class="form-inline">
+								<input type="text" name="amount" class="form-control text-left input-value"
+									placeholder="0" [(ngModel)]="conversion.amount" number required autocomplete="off">
+								<h3 class="text-center">
+									Select currencies
+								</h3>
+								<select name="currencyFrom" class="form-control select"
+									[(ngModel)]="conversion.currencyFrom" required>
+									<option *ngFor="let currency of currencies" [value]="currency.initials">
+										{{ currency.initials }} - {{ currency.description }}
+									</option>
+								</select>
+								<div class="arrow">
+									<i class="fas fa-arrow-circle-down"></i>
+								</div>
+								<select name="currencyTo" class="form-control select"
+									[(ngModel)]="conversion.currencyTo" required>
+									<option *ngFor="let currency of currencies" [value]="currency.initials">
+										{{ currency.initials }} - {{ currency.description }}
+									</option>
+								</select>
+								<input type="submit" value="Convert" class="btn btn-primary convert" data-toggle="modal"
+									data-target="#ratesModal" (click)="convert()"
+									[disabled]="!conversionForm.form.valid">
+							</form>
+						</div>
+						<rates-modal [id]="'ratesModal'" [conversionResponse]="conversionResponse"
+							[conversion]="conversion" (onNewSearch)="init()">
+						</rates-modal>
+					</div>
+					<div>
+						<p class="footNote text-center">*This is a limited test API. Please, try <strong>EUR</strong> to
+							other currencies. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>
-<div class="panel panel-success">
-	<div class="panel-heading">
-		Inform a value and select currencies to convert
-	</div>
-	<div class="panel-body text-center">
-	  <form #conversionForm="ngForm" class="form-inline">
-		<input 
-			type="text" 
-			name="amount"
-			class="form-control text-right"
-			placeholder="0"
-			[(ngModel)]="conversion.amount"
-			number
-			required>
-		<select 
-			name="currencyFrom"
-			class="form-control"
-			[(ngModel)]="conversion.currencyFrom"
-			required>
-			<option
-				*ngFor="let currency of currencies"
-				[value]="currency.initials">
-				{{ currency.initials }} - {{ currency.description }}
-			</option>
-		</select>
-		<span class="glyphicon glyphicon-arrow-right" 
-			aria-hidden="true"></span>
-		<select
-			name="currencyTo"
-			class="form-control"
-			[(ngModel)]="conversion.currencyTo"
-			required>
-			<option
-				*ngFor="let currency of currencies"
-				[value]="currency.initials">
-				{{ currency.initials }} - {{ currency.description }}
-			</option>
-		</select>
-		<input 
-			type="submit" 
-			value="Convert"
-			class="btn btn-success"
-			data-toggle="modal"
-			data-target="#ratesModal"
-			(click)="convert()"
-			[disabled]="!conversionForm.form.valid">
-	  </form>
-	 </div>
-	 <rates-modal
-	 [id]="'ratesModal'"
-	 [conversionResponse]="conversionResponse"
-	 [conversion]="conversion"
-	 (onNewSearch)="init()">
-	 </rates-modal>
-	</div>
-	<div>
-		<p class="footNote">*This is a limited test API. Only works from <strong>EUR</strong> to other currencies. </p>
-	</div>

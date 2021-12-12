@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TaskRoutes } from './task-manager/task-routing.module';
-import { DashboardRoutes } from './dashboard/dashboard-routing.module';
-import { CalculatorRoutes } from './calculator/calculator-routing.module';
 import { NoughtsAndCrossesRoutes } from './noughts-and-crosses/noughts-and-crosses-routing.module'
+import { ShoppingCartRoutes } from './shopping-cart/shopping-cart-routing.module'
+import { CalculatorRoutes } from './calculator/calculator-routing.module';
+import { DashboardRoutes } from './dashboard/dashboard-routing.module';
 import { ConverterRoutes } from './converter/converter-routing.module'
+import { TaskRoutes } from './task-manager/task-routing.module';
 
 const routes: Routes = [
   {
@@ -13,11 +14,12 @@ const routes: Routes = [
     redirectTo: '/dashboard',
     pathMatch: 'full'
   },
-  ...DashboardRoutes,
-  ...CalculatorRoutes,
-  ...TaskRoutes,
   ...NoughtsAndCrossesRoutes,
-  ...ConverterRoutes
+  ...ShoppingCartRoutes,
+  ...CalculatorRoutes,
+  ...DashboardRoutes,
+  ...ConverterRoutes,
+  ...TaskRoutes
 
   
 ];
